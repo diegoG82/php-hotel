@@ -43,11 +43,11 @@ $hotels = [
 ];
 // stampa semplice array
 
-foreach ($hotels as $hotelist) {
-    foreach ($hotelist as $hotelname) {
-        echo $hotelname . "<br>";
-    }
-}
+// foreach ($hotels as $hotelist) {
+//     foreach ($hotelist as $hotelname) {
+//         echo $hotelname . "<br>";
+//     }
+// }
 
 ?>
 
@@ -66,30 +66,31 @@ foreach ($hotels as $hotelist) {
 
 <body>
 
-    <table class="table table-dark">
-        <thead>
-            <tr>
-                <th scope="col">Position in array</th>
-                <th scope="col">Name</th>
-                <th scope="col">Description</th>
-                <th scope="col">Parking</th>
-                <th scope="col">Vote</th>
-                <th scope="col">Distance to center</th>
-            </tr>
-        </thead>
+    <div class="container mt-4">
 
-        <tbody>
+        <h1 class="text-center">Lista Hotel</h1>
 
-            <h1 class="text-center">Lista Hotel</h1>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Position in array</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Parking</th>
+                    <th scope="col">Vote</th>
+                    <th scope="col">Distance to center</th>
+                </tr>
+            </thead>
 
-            <div class="container">
+            <tbody>
+
                 <?php foreach ($hotels as $key => $hotelist) { ?>
 
                     <tr>
                         <th scope="row"><?php echo $key ?></th>
                         <th scope="row"><?php echo $hotelist['name'] ?></th>
                         <th scope="row"><?php echo $hotelist['description'] ?></th>
-                        <th scope="row"><?php echo $hotelist['parking'] ?></th>
+                        <th scope="row"><?php echo $hotelist['parking'] ? 'Yes' : 'No'; ?></th>
                         <th scope="row"><?php echo $hotelist['vote'] ?></th>
                         <th scope="row"><?php echo $hotelist['distance_to_center'] ?></th>
                     </tr>
@@ -98,10 +99,20 @@ foreach ($hotels as $hotelist) {
 
                 ?>
 
-            </div>
+            </tbody>
+        </table>
 
-        </tbody>
-    </table>
+
+
+
+
+
+
+
+
+
+    </div>
+
 
 
 
